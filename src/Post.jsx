@@ -7,10 +7,8 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
-import { Tooltip } from '@material-ui/core';
+import LongMenu from "./Menu";
 
 const useStyles = makeStyles({
     root: {
@@ -35,18 +33,7 @@ export default function SimpleCard() {
       <CardHeader
         title = "Title"
         action={
-            <>
-                <Tooltip title="Edit">
-                    <IconButton color="primary">
-                        <EditIcon />
-                    </IconButton>
-                </Tooltip>
-                <Tooltip title="Delete">
-                    <IconButton color="secondary">
-                        <DeleteIcon />
-                    </IconButton>
-                </Tooltip>
-            </>
+            <LongMenu />
         }
       />
       <CardContent>

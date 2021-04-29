@@ -14,6 +14,7 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import Tooltip from "@material-ui/core/Tooltip";
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -27,6 +28,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+    textDecoration: 'none',
+    color: 'white',
+  },
+  menu: {
+    textDecoration: 'none',
+    color: 'black',
   },
   search: {
     position: 'relative',
@@ -110,7 +117,7 @@ export default function Navbar() {
         <IconButton color="inherit">
           <AddCircleOutlineIcon />
         </IconButton>
-        <p>Create Post</p>
+        <Typography component={Link} to="/create" className={classes.menu}>Create Post</Typography>
       </MenuItem>
       <MenuItem>
         <IconButton color="inherit">
@@ -139,7 +146,7 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography component={Link} to="/" className={classes.title} variant="h6" noWrap>
             CEA-2
           </Typography>
           <div className={classes.search}>
@@ -158,7 +165,7 @@ export default function Navbar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <Tooltip title="Create Post">
-              <IconButton color="inherit">
+              <IconButton component={Link} to="/create" color="inherit">
                   <AddCircleOutlineIcon />
               </IconButton>
             </Tooltip>
