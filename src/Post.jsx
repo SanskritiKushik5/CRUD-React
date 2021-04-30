@@ -8,7 +8,7 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
-import LongMenu from "./Menu";
+import LongMenu from "./LongMenu";
 
 const useStyles = makeStyles({
     root: {
@@ -25,20 +25,22 @@ const useStyles = makeStyles({
     },
   });
 
-export default function SimpleCard() {
+export default function SimpleCard({posts, handleDelete}) {
     const classes = useStyles();
 
   return (
-    <Card className={classes.root} raised="true">
+    <>
+    {posts.map((post) => (
+    <Card key={post.id} className={classes.root} raised="true">
       <CardHeader
-        title = "Title"
+        title = {post.title}
         action={
-            <LongMenu />
+            <LongMenu id={post.id} handleDelete={handleDelete}/>
         }
       />
       <CardContent>
         <Typography variant="body2" component="p">
-          content
+          {post.body}
         </Typography>
       </CardContent>
       <CardActions>
@@ -46,5 +48,7 @@ export default function SimpleCard() {
         <IconButton><ThumbDownIcon /></IconButton>
       </CardActions>
     </Card>
+     ))}
+     </>
   );
 }

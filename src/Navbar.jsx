@@ -123,13 +123,13 @@ export default function Navbar() {
         <IconButton color="inherit">
           <ThumbUpIcon />
         </IconButton>
-        <p>Liked Posts</p>
+        <Typography component={Link} to="/" className={classes.menu}>Liked Posts</Typography>
       </MenuItem>
       <MenuItem>
         <IconButton color="inherit">
           <ThumbDownIcon />
         </IconButton>
-        <p>Disliked Posts</p>
+        <Typography component={Link} to="/" className={classes.menu}>Disliked Posts</Typography>
       </MenuItem>
     </Menu>
   );
@@ -170,12 +170,12 @@ export default function Navbar() {
               </IconButton>
             </Tooltip>
             <Tooltip title="Liked Posts">
-              <IconButton color="inherit">
+              <IconButton component={Link} to="/" color="inherit">
                   <ThumbUpIcon />
               </IconButton>
             </Tooltip>
             <Tooltip title="Disliked Posts">
-              <IconButton color="inherit">
+              <IconButton component={Link} to="/" color="inherit">
                   <ThumbDownIcon />
               </IconButton>
             </Tooltip>

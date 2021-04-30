@@ -19,11 +19,11 @@ const Create = () => {
 		
 		<form autoComplete="off">
 			<Grid item spacing={9}>
-				<TextField style={{width: '100vh', margin: '1rem'}} variant="outlined" id="standard-basic" label="Title" />
+				<TextField style={{width: '100vh', margin: '1rem'}} variant="outlined" id="title" label="Title" />
 			</Grid>
 			<Grid item spacing={9}>
 				<TextField
-					id="standard-multiline-static"
+					id="body"
 					style={{width: '100vh', margin: '1rem'}}
 					label="Content"
 					variant="outlined"
