@@ -18,12 +18,12 @@ const Edit = ({loadPosts}) => {
 	}
 	const onSubmit = async (e) => {
 		e.preventDefault();
-		await axios.put(`http://localhost:3003/posts/${id}`, post);
+		await axios.put(`https://my-json-server.typicode.com/SanskritiKushik5/json-server/posts/${id}`, post);
 		history.push("/");
 		loadPosts();
 	}
 	const loadPost = async () => {
-		const result = await axios.get(`http://localhost:3003/posts/${id}`);
+		const result = await axios.get(`https://my-json-server.typicode.com/SanskritiKushik5/json-server/posts/${id}`);
         setPost(result.data);
 	}
     useEffect(() => {

@@ -19,7 +19,7 @@ export default function AlertDialog({id, loadPosts}) {
   };
   
   const deletePost = async (id) => {
-    await axios.delete(`http://localhost:3003/posts/${id}`);
+    await axios.delete(`https://my-json-server.typicode.com/SanskritiKushik5/json-server/posts/${id}`);
     loadPosts();
     handleClose();
   }
