@@ -9,7 +9,7 @@ import { ListItemIcon, Typography } from '@material-ui/core';
 import Delete from './Delete';
 import { Link } from 'react-router-dom';
 
-export default function LongMenu({id, handleDelete}) {
+export default function LongMenu({id}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -47,13 +47,13 @@ export default function LongMenu({id, handleDelete}) {
             <ListItemIcon >
                 <EditIcon color="primary"/>
             </ListItemIcon>
-            <Typography component={Link} to="/edit" style={{textDecoration: 'none', color: 'black'}} variant="inherit">Edit</Typography>
+            <Typography component={Link} to={`/edit/${id}`} style={{textDecoration: 'none', color: 'black'}} variant="inherit">Edit</Typography>
         </MenuItem>
         <MenuItem onClick={handleClose}>
             <ListItemIcon >
                 <DeleteIcon color="secondary"/>
             </ListItemIcon>
-            <Delete id={id} handleDelete={handleDelete}/>
+            <Delete id={id}/>
         </MenuItem>
       </Menu>
     </div>

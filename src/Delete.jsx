@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -6,10 +6,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
+import axios from 'axios';
 
-export default function AlertDialog({id, handleDelete}) {
-  const [open, setOpen] = React.useState(false);
-
+export default function AlertDialog({id}) {
+  const [open, setOpen] = useState(false);
+  const [posts, setPosts] = useState([]);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -17,7 +18,17 @@ export default function AlertDialog({id, handleDelete}) {
   const handleClose = () => {
     setOpen(false);
   };
+  
 
+  const loadPosts = async () => {
+    const result = await axios.get("http://localhost:3003/posts");
+    setPosts(result.data.reverse())
+  }
+  const deletePost = async (id) => {
+    await axios.delete(`http://localhost:3003/posts/${id}`);
+    handleClose();
+    loadPosts();
+  }
   return (
     <div>
       <Typography onClick={handleClickOpen}>Delete</Typography>
@@ -37,7 +48,7 @@ export default function AlertDialog({id, handleDelete}) {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={() => handleDelete(id)} color="primary" autoFocus>
+          <Button onClick={() => deletePost(id)} color="primary" autoFocus>
             Delete
           </Button>
         </DialogActions>

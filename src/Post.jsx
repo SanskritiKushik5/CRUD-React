@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     },
   });
 
-export default function SimpleCard({posts, handleDelete}) {
+export default function SimpleCard({posts}) {
     const classes = useStyles();
 
   return (
@@ -35,7 +35,7 @@ export default function SimpleCard({posts, handleDelete}) {
       <CardHeader
         title = {post.title}
         action={
-            <LongMenu id={post.id} handleDelete={handleDelete}/>
+            <LongMenu id={post.id}/>
         }
       />
       <CardContent>

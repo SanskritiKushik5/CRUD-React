@@ -5,44 +5,30 @@ import Post from './Post';
 import Create from './Create';
 import Edit from "./Edit";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { CloudDone } from '@material-ui/icons';
+import axios from "axios";
 
 function App() {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
 
-  const fetchPosts = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-    const posts = await response.json()
-    setPosts(posts)
-  }
-  const handleDelete = async (id) => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts/"+id, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json'
-    }
-    }).then(response => response.json());
-    
-  }
-  const handleCreate = async () => {
-
-  }
   useEffect(() => {
-    fetchPosts()
+      loadPosts();
   }, []);
-
+  const loadPosts = async () => {
+    const result = await axios.get("http://localhost:3003/posts");
+    setPosts(result.data.reverse())
+  }
   return (
     <Router>
       <div className="App">
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Post posts={posts} handleDelete={handleDelete}/>
+            <Post posts={posts}/>
           </Route>
           <Route exact path="/create">
             <Create />
           </Route>
-          <Route exact path="/edit">
+          <Route exact path="/edit/:id">
             <Edit />
           </Route>
         </Switch>

@@ -1,8 +1,25 @@
-import React from 'react'
+import {React, useState} from 'react'
 import { Grid, Typography, TextField, Button } from '@material-ui/core';
 import "./Create.css";
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
+	let history = useHistory();
+	const [post, setPost] = useState({
+		userId: 1,
+		title: "",
+		body: ""
+	});
+	const { title, body } = post;
+	const onInputChange = e => {
+		setPost({...post,[e.target.name]: e.target.value})
+	}
+	const onSubmit = async (e) => {
+		e.preventDefault();
+		await axios.post("http://localhost:3003/posts", post);
+		history.push("/");
+	}
 	return (
 		<Grid
 			container
@@ -17,9 +34,17 @@ const Create = () => {
 			<Typography variant="h4" color="textSecondary">Create a Post</Typography>
 		</Grid>	
 		
-		<form autoComplete="off">
+		<form autoComplete="off" onSubmit={e => onSubmit(e)}>
 			<Grid item spacing={9}>
-				<TextField style={{width: '100vh', margin: '1rem'}} variant="outlined" id="title" label="Title" />
+				<TextField 
+					style={{width: '100vh', margin: '1rem'}} 
+					variant="outlined" 
+					id="title" 
+					value={title} 
+					name="title"
+					label="Title" 
+					onChange={e => onInputChange(e)}
+				/>
 			</Grid>
 			<Grid item spacing={9}>
 				<TextField
@@ -28,7 +53,10 @@ const Create = () => {
 					label="Content"
 					variant="outlined"
 					multiline
+					value={body}
+					name="body"
 					rows={4}
+					onChange={e => onInputChange(e)}
 				/>
 			</Grid>
 			<Grid item spacing={10} >
