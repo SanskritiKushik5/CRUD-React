@@ -4,7 +4,7 @@ import "./Create.css";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
-const Create = () => {
+const Create = ({loadPosts}) => {
 	let history = useHistory();
 	const [post, setPost] = useState({
 		userId: 1,
@@ -19,6 +19,7 @@ const Create = () => {
 		e.preventDefault();
 		await axios.post("http://localhost:3003/posts", post);
 		history.push("/");
+		loadPosts();
 	}
 	return (
 		<Grid

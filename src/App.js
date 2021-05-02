@@ -6,7 +6,7 @@ import Create from './Create';
 import Edit from "./Edit";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from "axios";
-
+ 
 function App() {
   const [posts, setPosts] = useState([]);
 
@@ -23,13 +23,13 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Post posts={posts}/>
+            <Post posts={posts} loadPosts={loadPosts}/>
           </Route>
           <Route exact path="/create">
-            <Create />
+            <Create loadPosts={loadPosts}/>
           </Route>
           <Route exact path="/edit/:id">
-            <Edit />
+            <Edit loadPosts={loadPosts}/>
           </Route>
         </Switch>
       </div>

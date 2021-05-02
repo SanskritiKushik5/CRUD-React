@@ -9,7 +9,7 @@ import { ListItemIcon, Typography } from '@material-ui/core';
 import Delete from './Delete';
 import { Link } from 'react-router-dom';
 
-export default function LongMenu({id}) {
+export default function LongMenu({id, loadPosts}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -53,7 +53,7 @@ export default function LongMenu({id}) {
             <ListItemIcon >
                 <DeleteIcon color="secondary"/>
             </ListItemIcon>
-            <Delete id={id}/>
+            <Delete id={id} loadPosts={loadPosts}/>
         </MenuItem>
       </Menu>
     </div>

@@ -4,7 +4,7 @@ import "./Create.css";
 import axios from 'axios';
 import { useHistory, useParams } from "react-router-dom";
 
-const Edit = () => {
+const Edit = ({loadPosts}) => {
 	let history = useHistory();
     const { id } = useParams();
 	const [post, setPost] = useState({
@@ -20,6 +20,7 @@ const Edit = () => {
 		e.preventDefault();
 		await axios.put(`http://localhost:3003/posts/${id}`, post);
 		history.push("/");
+		loadPosts();
 	}
 	const loadPost = async () => {
 		const result = await axios.get(`http://localhost:3003/posts/${id}`);

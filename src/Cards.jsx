@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     },
   });
 
-const Cards = ({post}) => {
+const Cards = ({post, loadPosts}) => {
   const classes = useStyles();
   const [active1, setActive1] = useState(false);
   const [active2, setActive2] = useState(false);
@@ -42,7 +42,7 @@ const Cards = ({post}) => {
       <CardHeader
         title = {post.title}
         action={
-            <LongMenu id={post.id}/>
+            <LongMenu id={post.id} loadPosts={loadPosts}/>
         }
       />
       <CardContent>

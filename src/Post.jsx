@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleCard({posts}) {
+export default function SimpleCard({posts, loadPosts}) {
   const classes = useStyles();
   const [searchTerm, setSearchTerm ] = useState("")
 
@@ -74,7 +74,7 @@ export default function SimpleCard({posts}) {
         return post
       }
     }).map((post) => (
-      <Card post={post}/>
+      <Card post={post} loadPosts={loadPosts}/>
      ))}
      </>
   );

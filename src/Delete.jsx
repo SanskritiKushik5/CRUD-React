@@ -8,9 +8,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import axios from 'axios';
 
-export default function AlertDialog({id}) {
+export default function AlertDialog({id, loadPosts}) {
   const [open, setOpen] = useState(false);
-  const [posts, setPosts] = useState([]);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -19,15 +18,10 @@ export default function AlertDialog({id}) {
     setOpen(false);
   };
   
-
-  const loadPosts = async () => {
-    const result = await axios.get("http://localhost:3003/posts");
-    setPosts(result.data.reverse())
-  }
   const deletePost = async (id) => {
     await axios.delete(`http://localhost:3003/posts/${id}`);
-    handleClose();
     loadPosts();
+    handleClose();
   }
   return (
     <div>
