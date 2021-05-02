@@ -15,7 +15,7 @@ function App() {
   }, []);
   const loadPosts = async () => {
     const result = await axios.get("http://localhost:3003/posts");
-    setPosts(result.data.reverse())
+    setPosts(result.data.reverse());
   }
   return (
     <Router>
