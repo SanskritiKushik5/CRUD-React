@@ -47,5 +47,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "Assignment 2\r Requirements , Functionalities and Problem statement\r 1.\tYou need to develop a CRUD (Create, Read, Update and Delete) for posts.\r 2.\tUse the JSON Placeholder API to fetch, update, and create posts\r 3.\tA search bar to search posts\r 4.\tA functionality to like and dislike posts\r 5.\tDifferent pages for each CRU Operation\r 6.\tDifferent Pages for Liked and Disliked Posts\r 7.\tUse Redux or Context API to store Liked and Disliked Posts and list of posts\r 8.\tUse a UI LIbrary (Preferrably Material-UI or Semantic React)",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanskritiKushik5/CEA-Assignment-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanskritiKushik5/CEA-Assignment-2/issues"
   }
 }
