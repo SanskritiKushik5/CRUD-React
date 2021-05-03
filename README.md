@@ -9,3 +9,5 @@ Requirements , Functionalities and Problem statement
 6.	Different Pages for Liked and Disliked Posts
 7.	Use Redux or Context API to store Liked and Disliked Posts and list of posts
 8.	Use a UI LIbrary (Preferrably Material-UI or Semantic React)
+
+Deployed: <a href="https://sanskritikushik5.github.io/CEA-Assignment-2/">after opening this, Clicking on CEA-2 will lead to the main page</a> 
