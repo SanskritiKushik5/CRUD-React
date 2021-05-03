@@ -14,7 +14,7 @@ function App() {
       loadPosts();
   }, []);
   const loadPosts = async () => {
-    const result = await axios.get("https://cea-assignment-2.herokuapp.com/api/posts/");
+    const result = await axios.get("https://my-json-server.typicode.com/SanskritiKushik5/json-server/posts/");
     setPosts(result.data.reverse());
   }
   return (

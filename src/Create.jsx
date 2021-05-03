@@ -17,7 +17,7 @@ const Create = ({loadPosts}) => {
 	}
 	const onSubmit = async (e) => {
 		e.preventDefault();
-		await axios.post("https://cea-assignment-2.herokuapp.com/api/posts/", post);
+		await axios.post("https://my-json-server.typicode.com/SanskritiKushik5/json-server/posts/", post);
 		history.push("/");
 		loadPosts();
 	}

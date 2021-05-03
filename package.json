@@ -21,8 +21,9 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "npm start",
     "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "json-server": "json-server --watch db.json --port 3003",
     "start:dev": "concurrently \"npm start\" \"npm run json-server\"",
     "build": "react-scripts build",

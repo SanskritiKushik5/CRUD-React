@@ -19,7 +19,7 @@ export default function AlertDialog({id, loadPosts}) {
   };
   
   const deletePost = async (id) => {
-    await axios.delete(`https://cea-assignment-2.herokuapp.com/api/posts/${id}`);
+    await axios.delete(`https://my-json-server.typicode.com/SanskritiKushik5/json-server/posts/${id}`);
     loadPosts();
     handleClose();
   }
