@@ -1,13 +1,8 @@
-# CEA-Assignment-2
-Assignment 2
-Requirements , Functionalities and Problem statement
-1.	You need to develop a CRUD (Create, Read, Update and Delete) for posts.
-2.	Use the JSON Placeholder API to fetch, update, and create posts
+# CRUD operations - React🚀
+Functionalities:
+1.	CRUD (Create, Read, Update and Delete) for posts.
+2.	JSON Placeholder API to fetch, update, and create posts
 3.	A search bar to search posts
 4.	A functionality to like and dislike posts
-5.	Different pages for each CRU Operation
-6.	Different Pages for Liked and Disliked Posts
-7.	Use Redux or Context API to store Liked and Disliked Posts and list of posts
-8.	Use a UI LIbrary (Preferrably Material-UI or Semantic React)
-
-Deployed: <a href="https://sanskritikushik5.github.io/CEA-Assignment-2/">after opening this, Clicking on CEA-2 will lead to the main page</a> 
+5.	Different pages for each CRUD Operation
+8.	Material-UI is used
