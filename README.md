@@ -1,4 +1,4 @@
-# CRUD operations - React🚀
+# CRUD operations - React 🚀
 Functionalities:
 1.	CRUD (Create, Read, Update and Delete) for posts.
 2.	JSON Placeholder API to fetch, update, and create posts
